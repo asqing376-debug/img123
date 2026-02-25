@@ -92,11 +92,11 @@ export async function fetchSecurityConfig(env) {
         return settings;
     } catch (error) {
         console.error('Failed to fetch security config:', error);
-        // 返回默认配置
+        // 返回默认配置（与 getSecurityConfig 默认管理员一致）
         return {
             auth: {
                 user: { authCode: "" },
-                admin: { adminUsername: "", adminPassword: "" }
+                admin: { adminUsername: "admin", adminPassword: "admin" }
             },
             upload: {
                 moderate: { enabled: false, channel: "default", moderateContentApiKey: "", nsfwApiPath: "" }
